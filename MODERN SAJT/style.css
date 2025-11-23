@@ -1,0 +1,1216 @@
+/* ---------- BASE / RESET ---------- */
+html, body {
+    background-color: #000;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --beige: #fff9de;
+    --gold: #d4af37;
+    --text: #2f2b24;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+html {
+    scroll-padding-top: 120px; /* PODESI VISINU HEADERA */
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--beige);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------- TOP NAV ---------- */
+
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.96);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 40px;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #f5f5f5;
+    opacity: 0.8;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+    color: var(--gold);
+}
+/* aktivni link u meniju */
+.nav-links a.active {
+    opacity: 1;
+    color: var(--gold);
+    position: relative;
+}
+
+.nav-links a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 1px;
+    background: var(--gold);
+}
+/* ---------- HERO (crni luksuzni dio) ---------- */
+
+.hero {
+    min-height: 100vh;
+    padding: 120px 20px 140px;
+    background: #000000;
+    color: var(--white);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* zlatno svjetlo u pozadini, ali jako suptilno */
+.hero .overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 10% 0, rgba(212, 175, 55, 0.35), transparent 55%),
+        radial-gradient(circle at 90% 100%, rgba(255, 255, 255, 0.08), transparent 60%);
+    pointer-events: none;
+}
+
+.hero-logo {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 24px;
+    z-index: 1;
+    filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.8));
+}
+
+.logo-text {
+    position: relative;
+    z-index: 1;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    font-size: 24px;
+    line-height: 1.8;
+    margin-bottom: 32px;
+}
+
+.cta-btn {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 999px;
+    border: 1.5px solid var(--gold);
+    background: transparent;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 12px;
+    margin-top: 4px;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.cta-btn:hover {
+    background: var(--gold);
+    color: #000;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8);
+    transform: translateY(-2px);
+}
+
+/* ---------- NAŠE USLUGE – luxe cards ---------- */
+
+.usluge {
+    padding: 80px 20px 70px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* blagi pattern / zlatni haze u pozadini */
+.usluge::before {
+    content: "";
+    position: absolute;
+    inset: -20% -40%;
+    background:
+        radial-gradient(circle at 0 0, rgba(212, 175, 55, 0.08), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(0, 0, 0, 0.03), transparent 60%);
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.usluge > * {
+    position: relative;
+    z-index: 1;
+}
+
+.usluge h2 {
+    font-size: 18px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #7d7b6f;
+    margin-bottom: 26px;
+}
+
+.usluge h2::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.12);
+    margin: 14px auto 0;
+}
+
+/* kartice usluga */
+
+.usluga {
+    background: rgba(255, 255, 255, 0.94);
+    max-width: 640px;
+    margin: 10px auto;
+    padding: 14px 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
+    border-left: 4px solid var(--gold);
+}
+
+.usluga h3 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #2f2b24;
+}
+
+.usluga span {
+    font-size: 13px;
+    font-weight: 500;
+    color: #b1841e;
+}
+
+/* malo živosti – blagi “zig-zag” na većim ekranima */
+@media (min-width: 900px) {
+    .usluga:nth-of-type(odd),
+    .usluga:nth-of-type(even) {
+        transform: translateX(0);
+    }
+}
+
+/* ---------- GALERIJA – crno/zlatni blokovi ---------- */
+
+.galerija {
+    padding: 70px 20px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.galerija h2 {
+    font-size: 14px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #b1841e;
+    margin-bottom: 30px;
+}
+
+.gallery-block {
+    background: linear-gradient(145deg, #0f0f0f, #1c1c1c);
+    border-radius: 20px;
+    padding: 22px 22px 26px;
+    margin-bottom: 34px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
+    border: 1px solid rgba(212, 175, 55, 0.22);
+    text-align: left;
+}
+
+
+.gallery-block h3 {
+    font-size: 11px;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+}
+
+
+/* grid slika */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 18px;
+}
+
+.grid img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 14px;
+    display: block;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        filter 0.35s ease;
+}
+
+.grid img:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85);
+    filter: brightness(1.06);
+}
+
+/* ---------- INFO BOXES (kontakt, lokacija, radno vrijeme) ---------- */
+
+.info-boxes {
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    padding: 40px 20px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.info-boxes .box h3 {
+    font-size: 13px;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    color: #b1841e;
+}
+
+.info-boxes .box p {
+    font-size: 13px;
+    margin: 2px 0;
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 768px) {
+    .top-nav {
+        padding: 0 16px;
+        justify-content: center;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .hero {
+        padding-top: 110px;
+    }
+
+    .logo-text {
+        font-size: 18px;
+        letter-spacing: 0.22em;
+    }
+
+    .usluge {
+        padding: 60px 16px 50px;
+    }
+
+    .usluga {
+        max-width: 100%;
+    }
+
+    .galerija {
+        padding: 50px 16px 60px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .grid img {
+        height: 220px;
+    }
+
+    .info-boxes {
+        padding: 30px 16px 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+.usluga {
+    transition: 
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-left-color 0.25s ease;
+}
+
+.usluga:hover {
+    transform: translateX(6px);      /* blago pomjeranje udesno */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    border-left-color: #d4af37;      /* blaga zlatna na hover */
+}
+/* === RESET GALERIJE: NEMA VIŠE CRNIH BLOKOVA === */
+.gallery-block {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 0 50px 0 !important;   /* samo razmak ispod svake grupe */
+}
+
+/* === ELEGANTNI CRNI BORDER OKO SLIKA === */
+
+.grid img {
+    border: 1px solid rgba(0, 0, 0, 0.18);  /* ultratanak crni border */
+    border-radius: 14px !important;
+}
+
+/* hover efekat – border postaje nijansu jači */
+.grid img:hover {
+    border-color: rgba(0, 0, 0, 0.50);
+}
+/* === LIGHTBOX – FULLSCREEN SLIKA === */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    display: none;                     /* sakriveno dok nije otvoreno */
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+}
+
+/* kad je otvoren */
+.lightbox.is-open {
+    display: flex;
+}
+
+/* sama slika u lightboxu */
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 18px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.9);
+    opacity: 0;
+    transform: scale(0.94);
+    transition:
+        opacity 0.25s ease-out,
+        transform 0.25s ease-out;
+}
+
+/* kad je lightbox otvoren – slika se “ispopči” */
+.lightbox.is-open .lightbox-img {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* zajednički stil za dugmad (X, <, >) */
+.lightbox-btn {
+    position: absolute;
+    background: rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #ffffff;
+    padding: 8px 12px;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox-btn:hover {
+    background: rgba(255,255,255,0.16);
+    transform: translateY(-1px);
+}
+
+/* X gumb gore desno */
+.lightbox-close {
+    top: 24px;
+    right: 26px;
+    font-size: 26px;
+}
+
+/* lijeva strelica */
+.lightbox-prev {
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* desna strelica */
+.lightbox-next {
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+    .lightbox-btn {
+        padding: 6px 10px;
+        font-size: 18px;
+    }
+
+    .lightbox-close {
+        top: 16px;
+        right: 18px;
+    }
+
+    .lightbox-prev {
+        left: 12px;
+    }
+
+    .lightbox-next {
+        right: 12px;
+    }
+}
+.phone-link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(0,0,0,0.35);
+}
+
+.phone-link:hover {
+    border-bottom-style: solid;
+}
+
+.kontakt-napomena {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 6px;
+}
+/* === PLUTAJUĆE INSTAGRAM DUGME – REZERVACIJE === */
+
+.floating-cta {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 16px;
+    border-radius: 999px;
+
+    background: rgba(0,0,0,0.9);
+    color: #fff9de;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    box-shadow: 0 14px 35px rgba(0,0,0,0.55);
+    z-index: 4000;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.floating-cta-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.6);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+
+    background: radial-gradient(circle at 0 0,
+        #feda75, #d62976, #962fbf, #4f5bd5);
+    color: #fff;
+}
+
+.floating-cta-text {
+    white-space: nowrap;
+}
+
+/* hover efekat */
+.floating-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.75);
+    background: rgba(0,0,0,1);
+}
+
+/* malo manje na mobitelu */
+@media (max-width: 768px) {
+    .floating-cta {
+        right: 14px;
+        bottom: 14px;
+        padding: 9px 14px;
+        font-size: 11px;
+    }
+
+    .floating-cta-icon {
+        width: 22px;
+        height: 22px;
+        font-size: 9px;
+    }
+}
+/* === SCROLL REVEAL ANIMACIJE === */
+
+.reveal-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.6s ease-out,
+        transform 0.6s ease-out;
+}
+
+.reveal-up.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* malo kašnjenje za kartice usluga */
+.usluga.reveal-up {
+    transition-delay: 0.08s;
+}
+footer {
+    background: #f6ecec;
+    color: #090909;
+    padding: 16px 24px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.back-to-top {
+    position: fixed;
+    left: 22px;
+    bottom: 60px;
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    border: 1px solid rgba(0,0,0,0.4);
+    background: rgba(255,249,222,0.95);
+    font-size: 18px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+    z-index: 3500;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        left: 14px;
+        bottom: 14px;
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+}
+.usluga {
+    transition: 
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-left-color 0.25s ease;
+}
+
+.usluga:hover {
+    transform: translateX(6px);      /* blago pomjeranje udesno */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    border-left-color: #d4af37;      /* blaga zlatna na hover */
+}
+.insta-float {
+    position: fixed;
+    right: 25px;
+    bottom: 30px;
+    background: #d4af37; /* zlato */
+    color: #000;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+    transition: 0.3s ease;
+    z-index: 2000;
+}
+
+.insta-float:hover {
+    background: #000;
+    color: #d4af37;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.55);
+    transform: translateY(-3px);
+}
+/* ======================= */
+/*     RESPONSIVE LAYOUT   */
+/* ======================= */
+
+/* TABLET / MANJI LAPTOPI */
+@media (max-width: 1024px) {
+    .hero {
+        padding: 120px 16px 100px;
+    }
+
+    .logo-text {
+        font-size: 20px;
+        letter-spacing: 0.20em;
+    }
+
+    .cta-btn {
+        font-size: 11px;
+        padding: 10px 22px;
+    }
+
+    .usluge {
+        padding: 70px 16px 60px;
+    }
+}
+
+/* MOBITELI DO 768px */
+@media (max-width: 768px) {
+
+    /* NAV – manji razmak, manji font */
+    .top-nav {
+        padding: 0 16px;
+        justify-content: center;
+    }
+
+    .nav-links {
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+        letter-spacing: 0.12em;
+    }
+
+    /* HERO */
+    .hero {
+        padding-top: 110px; /* da ne udara u nav */
+        padding-bottom: 90px;
+    }
+
+    .hero-logo {
+        width: 110px;
+        height: 110px;
+        margin-bottom: 16px;
+    }
+
+    .logo-text {
+        font-size: 16px;
+        letter-spacing: 0.18em;
+        line-height: 1.6;
+    }
+
+    .cta-btn {
+        padding: 10px 20px;
+        font-size: 11px;
+    }
+
+    /* USLUGE */
+    .usluge {
+        padding: 55px 16px 45px;
+    }
+
+    .usluge-inner {
+        max-width: 100%;
+    }
+
+    .usluga {
+        max-width: 100%;
+        padding: 12px 16px;
+    }
+
+    /* GALERIJA */
+    .galerija {
+        padding: 50px 16px 60px;
+        max-width: 100%;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .grid img {
+        height: 210px;
+    }
+
+    /* INFO BOXES – u kolonu */
+    .info-boxes {
+        padding: 30px 16px 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    /* FLOAT DUGME INSTAGRAM */
+    .insta-float {
+        right: 14px;
+        bottom: 24px;
+        padding: 9px 14px;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+    }
+
+    /* BACK TO TOP */
+    .back-to-top {
+        left: 14px;
+        bottom: 70px;
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    /* LIGHTBOX slika malo manja na mobu */
+    .lightbox-img {
+        max-width: 94vw;
+        max-height: 80vh;
+    }
+}
+
+/* JAKO MALI EKRANI (MALI TELEFONI) */
+@media (max-width: 480px) {
+
+    .logo-text {
+        font-size: 14px;
+        letter-spacing: 0.16em;
+    }
+
+    .cta-btn {
+        padding: 9px 18px;
+        font-size: 10px;
+    }
+
+    .usluge h2,
+    .galerija h2 {
+        font-size: 12px;
+        letter-spacing: 0.18em;
+    }
+
+    .usluga h3 {
+        font-size: 13px;
+    }
+
+    .usluga span {
+        font-size: 12px;
+    }
+
+    .gallery-block h3 {
+        font-size: 10px;
+        letter-spacing: 0.16em;
+    }
+
+    footer {
+        font-size: 11px;
+        padding: 10px 8px;
+    }
+}
+/* === SOFT PAGE FADE-IN NA LOAD === */
+
+body {
+    opacity: 0;
+    transition: opacity 2s ease-out;
+}
+
+body.page-loaded {
+    opacity: 1;
+}
+.usluga {
+    cursor: pointer;
+}
+.recenzije {
+    margin-top: 80px;
+    padding: 40px 20px 80px;
+    text-align: center;
+    background: #FAF0C2; 
+}
+
+.recenzije h2 {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #7d7b6f;
+    margin-bottom: 40px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.review-card {
+    background: #111;
+    border-radius: 16px;
+    padding: 12px;
+    border: 1px solid rgba(212,175,55,0.3); 
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+    transition: transform 0.25s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.45);
+}
+
+.review-card img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+/* --- ŠTA NAŠI KLIJENTI KAŽU --- */
+
+.reviews {
+    padding: 80px 20px 60px;
+    background: #fff7d5; /* ista bež kao usluge/galerija */
+    height: 600px;
+}
+
+.reviews h2 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 1rem;
+    color: #7d7b6f;
+    margin-bottom: 40px;
+    margin-bottom: 90px;
+}
+
+/* layout: lijevo velika kartica, desno grid recenzija */
+.reviews-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.8fr);
+    gap: 28px;
+    align-items: stretch;
+}
+
+/* glavna Google kartica */
+.rating-card img {
+    width: 100%;
+    display: block;
+    border-radius: 18px;
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(0,0,0,0.06);
+    background: #ffffff;
+}
+
+/* grid za ostale recenzije */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.reviews-grid img {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.40);
+    border: 1px solid rgba(0,0,0,0.06);
+    background: #ffffff;
+    object-fit: cover;
+}
+
+/* hover – blagi lift, ništa divlje */
+.reviews-grid img:hover,
+.rating-card img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* responsive – na mobitelu sve ispod svega, centrirano */
+@media (max-width: 768px) {
+    .reviews {
+        padding: 60px 16px 50px;
+    }
+
+    .reviews-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .rating-card {
+        max-width: 520px;
+        margin: 0 auto 26px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+        margin: 0 auto;
+    }
+}
+/* --- PRVA RECENZIJA (Google ocjena 4.9) --- */
+.featured-review {
+    grid-column: 1 / span 2;    /* zauzima dvije kolone */
+    width: 420px;               /* malo je povećamo */
+    height: auto;
+    transform: translate(-100px, -90px); /* pomjeraj lijevo i gore */
+    justify-self: start;        /* obavezno – da bude lijevo */
+    align-self: start;          /* obavezno – da bude gore */
+}
+/* SEKCIJA RECENZIJA */
+.reviews {
+    padding: 80px 20px 60px;
+    background: #FAF0C2;
+    position: relative;
+}
+
+.reviews h2 {
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #7d7b6f;
+    margin-bottom: 50px;
+}
+
+/* Unutrašnji layout */
+.reviews-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 40px;   /* malo mjesta da velika kartica "uđe" gore */
+}
+
+/* VELIKA GOOGLE KARTICA – GORE LIJEVO */
+.featured-review {
+    position: absolute;
+    left: 0;             /* skroz lijevo u okviru sekcije */
+    top: -10px;          /* diže je visočije, skoro do naslova */
+    width: 420px;        /* malo veća da dominira */
+    height: auto;
+    border-radius: 18px;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.18);
+}
+
+/* GRID SA MALIM RECENZIJAMA – U SREDINI */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    max-width: 750px;
+    margin: 0 auto;      /* centrirano ispod naslova */
+}
+
+.reviews-grid img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    display: block;
+}
+
+/* MOBITEL – da se sve poravna na fino kad je usko */
+@media (max-width: 768px) {
+    .reviews-inner {
+        padding-top: 0;
+    }
+
+    .featured-review {
+        position: static;     /* više nije zalijepljena gore-lijevo */
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto 24px;  /* centrirana iznad grida */
+        display: block;
+    }
+
+    .reviews-grid {
+        max-width: 100%;
+    }
+}
+/* GLOBALNO – slike da ne bježe van ekrana */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* MOBITEL / TABLET RESPONSIVE */
+@media (max-width: 768px) {
+
+    /* NAV */
+    .top-nav {
+        padding: 0 16px;
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: 11px;
+        flex-wrap: wrap;
+    }
+
+    /* HERO */
+    .hero {
+        padding: 120px 16px 80px;
+    }
+
+    .hero-logo {
+        width: 110px;
+        height: auto;
+    }
+
+    .logo-text {
+        font-size: 32px;
+        letter-spacing: 0.18em;
+        line-height: 1.4;
+    }
+
+    .cta-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* USLUGE – kartice preko cijele širine */
+    .usluge {
+        padding: 40px 12px;
+    }
+
+    .usluga {
+        max-width: 100%;
+        padding: 12px 14px;
+        font-size: 0.9rem;
+    }
+
+    .usluga h3 {
+        font-size: 0.9rem;
+    }
+
+    .usluga span {
+        font-size: 0.85rem;
+    }
+
+    /* GALERIJA */
+    .galerija {
+        padding: 40px 12px 60px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+    }
+
+    .grid img {
+        height: 200px;
+    }
+
+    /* RECENZIJE */
+    .reviews {
+        padding: 50px 12px;
+    }
+
+    .reviews-inner {
+        padding-top: 0;
+    }
+
+    .featured-review {
+        position: static;
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto 24px;
+        display: block;
+    }
+
+    .reviews-grid {
+        max-width: 100%;
+    }
+
+    /* INFO BOXES (kontakt / lokacija / radno vrijeme) */
+    .info-boxes {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 12px;
+        gap: 18px;
+    }
+
+    .box {
+        width: 100%;
+    }
+
+    /* FOOTER */
+    footer {
+        font-size: 0.8rem;
+        padding: 16px 8px 26px;
+    }
+
+    /* Instagram dugme – ako ga imaš fixed u uglu, neka bude manje */
+    .insta-floating {
+        right: 12px;
+        bottom: 70px;
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+}

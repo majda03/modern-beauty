@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Beauty Salon</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- GORNJI NAVIGACIONI MENI -->
+    <header class="top-nav">
+        <div class="nav-logo">
+            
+        </div>
+        <nav class="nav-links">
+            <a href="#hero">Početna</a>
+            <a href="#usluge">Usluge</a>
+            <a href="#galerija">Galerija</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+    </header>
+
+    <!-- HERO (CRNI DIO GORE) -->
+    <section class="hero" id="hero">
+        <div class="overlay"></div>
+
+        <img src="assets/1111.jpg" alt="Logo" class="hero-logo">
+
+       <div class="logo-text">
+    <span class="modern">Modern Beauty Studio</span>
+</div>
+        <a href="#usluge" class="cta-btn">Pogledaj usluge</a>
+    </section>
+
+    <!-- NAŠE USLUGE -->
+    <section id="usluge" class="usluge">
+        <h2>Naše usluge</h2>
+
+        <div class="usluga" data-target="gal-sminkanje">
+            <h3>Profesionalno šminkanje</h3>
+            <span>70 KM</span>
+        </div>
+
+       <div class="usluga" data-target="gal-frizure">
+            <h3>Frizure</h3>
+            <span>30 / 70 KM</span>
+        </div>
+<div class="usluga" data-target="gal-obrve">
+            <h3>Laminacija obrva</h3>
+            <span>35 KM</span>
+        </div>
+
+        <div class="usluga" data-target="gal-obrve">
+            <h3>Henna obrve</h3>
+            <span>30 KM</span>
+        </div>
+
+        <div class="usluga">
+            <h3>Nokti</h3>
+            <span>40 / 70 KM</span>
+        </div>
+    </section>
+
+
+
+    <!-- GALERIJA -->
+    <section class="galerija" id="galerija">
+        <h2>Galerija</h2>
+
+        <!-- PROFESIONALNO ŠMINKANJE -->
+        <div class="gallery-block" id="gal-sminkanje">
+            <h3>Profesionalno šminkanje</h3>
+            <div class="grid">
+                <img src="assets/2.jpg" alt="Profesionalno šminkanje 1">
+                <img src="assets/3.jpg" alt="Profesionalno šminkanje 2">
+                <img src="assets/6.jpg" alt="Profesionalno šminkanje 3">
+                <img src="assets/5.jpg" alt="Profesionalno šminkanje 4">
+            </div>
+        </div>
+
+        <!-- FRIZURE -->
+       <div class="gallery-block" id="gal-frizure">
+            <h3>Frizure</h3>
+            <div class="grid">
+                <img src="assets/13.jpg" alt="Frizura 1">
+                <img src="assets/7.jpg" alt="Frizura 2">
+                <img src="assets/8.jpg" alt="Frizura 3">
+                <img src="assets/14.jpg" alt="Frizura 4">
+            </div>
+        </div>
+
+        <!-- OBRVE -->
+        <div class="gallery-block" id="gal-obrve">
+            <h3>Obrve</h3>
+            <div class="grid">
+                <img src="assets/10.jpg" alt="Obrve 1">
+                <img src="assets/11.jpg" alt="Obrve 2">
+                <img src="assets/12.jpg" alt="Obrve 3">
+            </div>
+        </div>
+
+        <!-- NOKTI -->
+        <div class="gallery-block" id="gal-nokti">
+            <h3>Nokti</h3>
+            <div class="grid">
+                <img src="assets/16.jpg" alt="Nokti 1">
+                <img src="assets/17.jpg" alt="Nokti 2">
+                <img src="assets/18.jpg" alt="Nokti 3">
+                <img src="assets/19.jpg" alt="Nokti 4">
+            </div>
+        </div>
+    </section>
+<section class="reviews">
+    <h2>Šta naši klijenti kažu</h2>
+
+    <div class="reviews-inner">
+        <!-- VELIKA GOOGLE OCJENA -->
+        <img src="assets/111.png" alt="Google ocjena 4.9" class="featured-review">
+
+        <!-- OSTALI KOMENTARI -->
+        <div class="reviews-grid">
+            <img src="assets/22.jpg" alt="Recenzija 1">
+            <img src="assets/33.jpg" alt="Recenzija 2">
+            <img src="assets/44.jpg" alt="Recenzija 3">
+            <img src="assets/55.jpg" alt="Recenzija 4">
+            <img src="assets/66.jpg" alt="Recenzija 5">
+            <img src="assets/777.jpg" alt="Recenzija 6">
+        </div>
+    </div>
+</section>
+</section>
+    <!-- KONTAKT / LOKACIJA / RADNO VRIJEME -->
+   <section class="info-boxes" id="kontakt">
+    <div class="box">
+        <h3>Kontakt</h3>
+        <p>📞 <a href="tel:+38762975674" class="phone-link">062 975 674</a></p>
+        <p>⏰ 10:00 – 18:00</p>
+      
+    </div>
+
+        <div class="box">
+            <h3>Lokacija</h3>
+            <p>Adresa: Branilaca Sarajeva 30</p>
+            <p>Sarajevo</p>
+        </div>
+
+        <div class="box">
+            <h3>Radno vrijeme</h3>
+            <p>Pon–Sub: 10:00 – 18:00</p>
+        </div>
+    </section>
+<!-- LIGHTBOX ZA GALERIJU -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-btn lightbox-close">&times;</button>
+        <button class="lightbox-btn lightbox-prev">&#10094;</button>
+
+        <img class="lightbox-img" src="" alt="">
+
+        <button class="lightbox-btn lightbox-next">&#10095;</button>
+    </div>
+<footer>
+    © 2025 Modern Beauty Salon • Design: Majda Kapetanović
+</footer>
+ <script src="javascript.js"></script>
+    <script src="reveal.js"></script>
+    <!-- BACK TO TOP DUGME -->
+    <button class="back-to-top" aria-label="Nazad na vrh">
+        ↑
+    </button>
+    <a href="https://www.instagram.com/modernbeautystudiio?igsh=MTNzZzR2ZWN5NXg4cw==" 
+   class="insta-float" 
+   target="_blank">
+    Rezerviši termin
+</a>
+</body>
+</html>
+
