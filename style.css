@@ -1265,3 +1265,47 @@ img {
     margin: 0 auto 25px auto !important;
   }
 }
+/* MOBILNI FIX ZA REZENZIJE + KONTAKT  */
+@media (max-width: 768px) {
+
+    /* cijeli blok recenzija – normalan padding */
+    .reviews {
+        padding: 40px 16px 10px;
+    }
+
+    .reviews-inner {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    /* glavna Google ocjena – 100% širine, centrirana */
+    .featured-review {
+        max-width: 100%;
+        margin: 0 auto 24px;
+    }
+
+    /* ostale recenzije: jedna ispod druge */
+    .reviews-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* KONTAKT BLOK – DA SE NE PENJE PREMA GORE */
+    #kontakt {
+        padding-top: 40px;      /* razmak iznad „Kontakt / Lokacija / Radno vrijeme“ */
+    }
+
+    .info-boxes {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .info-boxes .box {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
