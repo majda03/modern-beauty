@@ -1343,3 +1343,59 @@ img {
     margin-top: 32px;
   }
 }
+/* === MOBILE FIX ZA RECENZIJE + KONTAKT — TAČNE TVOJE KLASE === */
+@media (max-width: 768px) {
+
+  /* cijela reviews sekcija */
+  .reviews-inner {
+    padding: 0 16px;
+  }
+
+  /* velika Google kartica (111.png) */
+  .featuredReview,
+  .FeaturedReview,
+  .featured-review {
+    max-width: 95% !important;
+    margin: 0 auto 28px !important;
+    display: block;
+  }
+
+  .featuredReview img,
+  .FeaturedReview img,
+  .featured-review img {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
+
+  /* grid manjih recenzija */
+  .reviews-grid,
+  .ReviewsGrid,
+  .revijev-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    max-width: 95% !important;
+    margin: 0 auto;
+  }
+
+  /* da KONTAKT NE UĐE U RECENZIJE */
+  #contact,
+  #kontakt,
+  #Contact {
+    margin-top: 40px !important;
+  }
+
+  /* kutije za info: telefon, lokacija, radno vrijeme */
+  .infoBoxes,
+  .InfoBoxes,
+  .ClassInfoBoxes,
+  .ClassInfoBoxes .box,
+  .ClassInfoBoxesIdContact,
+  .ClassInfoBoxesIdContact .box {
+    width: 100% !important;
+    margin: 12px auto !important;
+    text-align: center !important;
+  }
+
+}
