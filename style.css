@@ -1309,3 +1309,37 @@ img {
     }
 }
 
+/* === MOBITEL FIX ZA RECIENZIJE + KONTAKT === */
+@media (max-width: 768px) {
+
+  /* cijela sekcija recenzija */
+  .reviews-section {
+    padding: 40px 16px 56px;   /* malo sa strane + dodatni razmak dole */
+  }
+
+  /* velika Google kartica 111.png */
+  .featured-review {
+    max-width: 95%;
+    margin: 0 auto 24px;       /* centriraj i malo odmakni od grid-a */
+  }
+
+  .featured-review img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* manje kartice – sve u jednu kolonu, centrirano */
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 95%;
+    margin: 0 auto 10px;
+  }
+
+  /* da KONTAKT sekcija ne lijepi za zadnju recenziju */
+  #kontakt {
+    margin-top: 32px;
+  }
+}
