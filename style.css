@@ -1215,45 +1215,53 @@ img {
     }
 
 }
-/* ===== MOBILE FIX FOR REVIEWS SECTION ===== */
+/* ============================
+   UNIVERSAL MOBILE FIX ZA RECENZIJE
+   ============================ */
 @media (max-width: 768px) {
 
-  .reviews-layout {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    margin-top: 20px;
-    width: 100%;
+  /* Sekcija recenzija — ništa ne bježi desno */
+  .reviews,
+  .reviews-inner,
+  .reviews-grid,
+  .featured-review {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 12px !important;
+    box-sizing: border-box;
   }
 
-  .main-review {
-    width: 95%;
+  /* Sve slike u toj sekciji */
+  .reviews img,
+  .reviews-grid img,
+  .featured-review img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+    border-radius: 14px;
     margin: 0 auto;
-  }
-
-  .reviews-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 95%;
-    margin: 0 auto;
-  }
-
-  .review-card {
-    width: 100%;
-  }
-
-  /* Da ne bježi iza slike */
-  .reviews-section {
-    padding-top: 40px !important;
-  }
-
-  /* ONA VELIKA SLIKA GORE – centriraj i spuštaj */
-  .google-main {
-    width: 100%;
-    max-width: 450px;
-    margin: 0 auto 20px auto;
     display: block;
+  }
+
+  /* Grid postaje kolona */
+  .reviews-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+  }
+
+  /* Featured (111.png) — uvijek PRVA, centrirana, lijepa */
+  .featured-review {
+    margin-bottom: 20px !important;
+  }
+
+  /* Naslov centriran i lijep */
+  .reviews h2,
+  .section-title,
+  .reviews-title {
+    text-align: center !important;
+    width: 100% !important;
+    margin: 0 auto 25px auto !important;
   }
 }
