@@ -1337,65 +1337,66 @@ img {
     max-width: 95%;
     margin: 0 auto 10px;
   }
-
-  /* da KONTAKT sekcija ne lijepi za zadnju recenziju */
-  #kontakt {
-    margin-top: 32px;
-  }
-}
-/* === MOBILE FIX ZA RECENZIJE + KONTAKT — TAČNE TVOJE KLASE === */
+/* ===== MOBILNI FIX — RECENZIJE + KONTAKT ===== */
 @media (max-width: 768px) {
 
-  /* cijela reviews sekcija */
+  /* Cijela sekcija recenzija da lijepo stane */
   .reviews-inner {
-    padding: 0 16px;
-  }
-
-  /* velika Google kartica (111.png) */
-  .featuredReview,
-  .FeaturedReview,
-  .featured-review {
-    max-width: 95% !important;
-    margin: 0 auto 28px !important;
     display: block;
-  }
-
-  .featuredReview img,
-  .FeaturedReview img,
-  .featured-review img {
-    width: 100% !important;
-    height: auto !important;
-    display: block;
-  }
-
-  /* grid manjih recenzija */
-  .reviews-grid,
-  .ReviewsGrid,
-  .revijev-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-    max-width: 95% !important;
+    padding: 0 16px 32px;
     margin: 0 auto;
   }
 
-  /* da KONTAKT NE UĐE U RECENZIJE */
-  #contact,
-  #kontakt,
-  #Contact {
-    margin-top: 40px !important;
+  /* Velika Google kartica (111.png) */
+  .featured-review {
+    max-width: 100%;
+    margin: 0 auto 24px;
   }
 
-  /* kutije za info: telefon, lokacija, radno vrijeme */
-  .infoBoxes,
-  .InfoBoxes,
-  .ClassInfoBoxes,
-  .ClassInfoBoxes .box,
-  .ClassInfoBoxesIdContact,
-  .ClassInfoBoxesIdContact .box {
-    width: 100% !important;
-    margin: 12px auto !important;
-    text-align: center !important;
+  .featured-review img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
+  /* Ostale recenzije – jedna ispod druge, centrirane */
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    justify-items: center;
+  }
+
+  .reviews-grid img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* KONTAKT blok – spusti ga ispod recenzija i centriraj */
+  .info-boxes,
+  #kontakt.info-boxes {
+    margin-top: 40px !important;      /* da KONTAKT ne sjedi preko kartice */
+    padding: 32px 16px 60px;
+    text-align: center;
+  }
+
+  .info-boxes .box {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 24px;
+  }
+
+  .info-boxes h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+
+  .info-boxes p {
+    margin: 0;
+  }
 }
+
+
+
