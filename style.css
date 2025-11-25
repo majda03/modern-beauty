@@ -1558,5 +1558,16 @@ img {
     }
 }
 
+.insta-link {
+  color: #fff;           /* ili tvoja boja */
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.insta-link i {
+  margin-right: 8px;
+  font-size: 20px;
+}
 
 
