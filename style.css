@@ -1473,6 +1473,7 @@ img {
   .featured-review {
     max-width: 100%;
     margin: 0 auto 24px;
+    margin-left: 50px;
   }
 
   .reviews-grid {
@@ -1556,4 +1557,5 @@ img {
         padding-top: 40px !important;
     }
 }
+
 
