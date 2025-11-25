@@ -1398,5 +1398,111 @@ img {
   }
 }
 
+/* === FINAL FIX: RECENZIJE + KONTAKT, DESKTOP + MOBITEL === */
+
+/* Sekcija recenzija */
+.reviews {
+  background: #FAF0C2;
+  padding: 70px 20px 40px;
+  height: auto;                    /* više NEMA fiksne visine */
+}
+
+.reviews h2 {
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #7d7b6f;
+  margin-bottom: 40px;
+}
+
+/* Unutrašnji layout: lijevo velika, desno grid */
+.reviews-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* Velika Google kartica (111.png) */
+.featured-review {
+  flex: 1 1 320px;
+  max-width: 420px;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+  border: 1px solid rgba(0,0,0,0.06);
+  display: block;
+}
+
+/* Grid manjih recenzija */
+.reviews-grid {
+  flex: 1 1 320px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.reviews-grid img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  border: 1px solid rgba(0,0,0,0.06);
+  display: block;
+}
+
+/* Globalno osiguraj da slike ne iskaču */
+.reviews img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* === MOBITEL / TABLET: sve ispod svega, lijepo centrirano === */
+@media (max-width: 768px) {
+
+  .reviews {
+    padding: 50px 16px 30px;
+  }
+
+  .reviews-inner {
+    display: block;
+    max-width: 100%;
+  }
+
+  .featured-review {
+    max-width: 100%;
+    margin: 0 auto 24px;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .reviews-grid img {
+    max-width: 100%;
+  }
+
+  /* KONTAKT BLOK – da NE PENJE preko recenzija */
+  #kontakt {
+    padding-top: 40px;
+  }
+
+  .info-boxes {
+    margin-top: 0;
+    padding: 24px 16px 50px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+  }
+
+  .info-boxes .box {
+    width: 100%;
+    max-width: 320px;
+  }
+}
 
 
